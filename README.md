@@ -29,10 +29,10 @@ Necessary Extensions and further required packages are also required to be insta
 - **Now you can open your poject in the browser with the PORT specified in the server.js file. In this case it is "localhost:5000"**
 
 - **npm i shortid**
-"shortid" is a popular npm package used to generate unique and concise IDs which plays a vital role in the URL shortening process.
+- "shortid" is a popular npm package used to generate unique and concise IDs which plays a vital role in the URL shortening process.
 
 - **npm install method-override**
-It is a npm package commonly which allows us to override the HTTP request method using special query parameters. It configures with Express.js application as middleware.
+- It is a npm package commonly which allows us to override the HTTP request method using special query parameters. It configures with Express.js application as middleware.
 
 - **NOTE**
  - *It is suggested to install MongoDB for VSCode, Quokka.js , NodeJS, ejs language support extensions in your VSCode for the smooth functioning*
