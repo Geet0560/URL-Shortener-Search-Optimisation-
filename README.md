@@ -40,28 +40,27 @@ Necessary Extensions and further required packages are also required to be insta
 
 ## Functionality
 
-1. Server Configuration:
+1. **Server Configuration:**
 
-The server.js file sets up an Express.js server by importing the necessary dependencies, such as Express, Mongoose, ShortUrl model, and method-override.
-It establishes a connection to a MongoDB database using Mongoose.
+- The server.js file sets up an Express.js server by importing the necessary dependencies, such as Express, Mongoose, ShortUrl model, and method-override. It establishes a connection to a MongoDB database using Mongoose.
 
-2. Routing and Request Handling:
-The server.js file defines several routes to handle different HTTP requests.
+2. **Routing and Request Handling:**
+- The server.js file defines several routes to handle different HTTP requests.
 The root route ("/") is responsible for handling GET and POST requests.
 GET request: Renders the index.ejs template with the list of shortUrls retrieved from the database, based on an optional search query.
 POST request: Creates a new ShortUrl document in the database using the provided full URL and notes, and redirects back to the root ("/").
 The route "/:shortUrl" handles GET requests for accessing the original URL associated with a given short URL.
 The route "/shortUrls/:id" handles DELETE requests for removing a ShortUrl document from the database based on its ID.
 
-3. Database Operations:
-The server.js file uses Mongoose to define and interact with a ShortUrl model, which represents the shortened URLs stored in the database.
+3. **Database Operations:**
+- The server.js file uses Mongoose to define and interact with a ShortUrl model, which represents the shortened URLs stored in the database.
 The ShortUrl model is imported and used for various operations:
 Creating a new document: The POST request handler creates a new ShortUrl document in the database with the provided full URL and notes.
 Retrieving documents: The GET request handler retrieves shortUrls from the database based on an optional search query.
 Updating click counts: When a short URL is accessed, the corresponding ShortUrl document is retrieved, its click count is incremented, and the document is saved.
 Deleting a document: The DELETE request handler removes a ShortUrl document from the database based on its ID.
 
-4. Template Rendering:
+4. **Template Rendering:**
 - The index.ejs file is an EJS (Embedded JavaScript) template used to render the HTML content that is sent to the client. The template contains HTML markup with dynamic sections indicated by <% %> tags, which are populated with data from the server.
 - It displays a search form to search for existing shortened URLs and a form to create new shortened URLs.The existing shortened URLs are displayed in a table, showing the full URL, shortened URL, click count, notes, and a delete button. The template loops through the shortUrls data received from the server and dynamically generates table rows for each entry.
 
