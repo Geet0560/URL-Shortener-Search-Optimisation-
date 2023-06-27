@@ -11,27 +11,27 @@ You should have a good source code editor installed in your PC preferably VSCode
 Similarly MongoDB/mongoose and Express packages have to be pre-installed in your path before compiling the project. 
 Necessary Extensions and further required packages are also required to be installed. After installation of NodeJs and MongoDB from their official sources into the system path, load the Project in VS Code and run the following commands in the terminal-
 
-- npm i init
-  After this, it will prompt you with a series of questions to gather information about your project name, version, description, entry point, author details, and other metadata which you can all accept and it will load the **package.json** file.
+- **npm i init**
+-  After this, it will prompt you with a series of questions to gather information about your project name, version, description, entry point, author details, and other metadata which you can all accept and it will load the **package.json** file.
 
-- npm i express mongoose ejs
-This will install the respective packages.
+- **npm i express mongoose ejs**
+- This will install the respective packages.
 
-- npm i --save-dev nodemon
-This will install nodemon and save it as a development dependency in the project. The package will be downloaded from the npm registry and stored in the **"node_modules"** directory within the project's root folder.
+- **npm i --save-dev nodemon**
+- This will install nodemon and save it as a development dependency in the project. The package will be downloaded from the npm registry and stored in the **"node_modules"** directory within the project's root folder.
 
-- npm run
-(Ensure that MongoDB server is successfully running and connected most probably in the **localhost:27017** PORT, if it is giving errors and is getting disconnected, try manual approach -> Run **mongod** command in the terminal)
-- npm run test
-- npm run devStart
+- **npm run**
+- (Ensure that MongoDB server is successfully running and connected most probably in the **localhost:27017** PORT, if it is giving errors and is getting disconnected, try manual approach -> Run **mongod** command in the terminal)
+- **npm run test**
+- **npm run devStart**
 (Here devStart refers to the script nomenclature done in the package.json file which is **devStart** in my project)
 
-**Now you can open your poject in the browser with the PORT specified in the server.js file. In this case it is "localhost:5000"**
+- **Now you can open your poject in the browser with the PORT specified in the server.js file. In this case it is "localhost:5000"**
 
-- npm i shortid
+- **npm i shortid**
 "shortid" is a popular npm package used to generate unique and concise IDs which plays a vital role in the URL shortening process.
 
-- npm install method-override
+- **npm install method-override**
 It is a npm package commonly which allows us to override the HTTP request method using special query parameters. It configures with Express.js application as middleware.
 
 - **NOTE**
