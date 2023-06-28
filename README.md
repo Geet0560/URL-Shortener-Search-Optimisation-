@@ -88,4 +88,16 @@ Deleting a document: The DELETE request handler removes a ShortUrl document from
 
 ## Resources
 
+- (https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript)
+- (https://nodejs.org/en/docs/guides/getting-started-guide/)
+- (https://www.youtube.com/playlist?list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU)
+- (https://expressjs.com/en/starter/installing.html)
+- (https://university.mongodb.com/courses/M001/about)
+- (https://www.freecodecamp.org/learn/apis-and-microservices/#mongodb-and-mongoose)
+- (https://www.youtube.com/watch?v=F-sFp_AvHc8)
+- (https://youtu.be/ILviQic0c8g)
+- (https://www.geeksforgeeks.org/routing-in-node-js/)
+- (https://openclassrooms.com/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656216-create-a-data-schema)
+- (https://www.digitalocean.com/community/tutorials/use-expressjs-to-get-url-and-post-parameters)
+
 
