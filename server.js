@@ -79,12 +79,11 @@ app.put('/shortUrls/:id/favorite', async (req, res) => {
       return res.status(404).send('URL not found');
     }
 
-    // Toggle the favorite field
+    
     shortUrl.favorite = !shortUrl.favorite;
     await shortUrl.save();
 
     if (shortUrl.favorite) {
-      // Create a new favorite entry
       const favorite = await Favorite.create({
         full: shortUrl.full,
         short: shortUrl.short,
@@ -93,7 +92,7 @@ app.put('/shortUrls/:id/favorite', async (req, res) => {
       });
       console.log('Favorite created:', favorite);
     } else {
-      // Remove the corresponding favorite entry if unfavorited
+
       await Favorite.deleteOne({ short: shortUrl.short });
       console.log('Favorite deleted:', shortUrl.short);
     }
