@@ -274,7 +274,6 @@
   
 
   <button id="favoriteBtn" class="btn btn-primary">Favorites List</button>
-  <!-- Add a div to hold the favorite table -->
 <div id="favoriteTable" style="display: none;">
   <h2 style="padding-top: 10px; padding-bottom: 15px;">Favorite URLs</h2>
   <table class="table table-striped">
@@ -316,7 +315,7 @@
           <th>Clicks</th>
           <th>Notes</th>
           <th>Actions</th>
-          <th>Wishlist</th> <!-- New column -->
+          <th>Wishlist</th> 
         </tr>
       </thead>
       <tbody>
@@ -333,7 +332,7 @@
                 </button>
               </form>
             </td>
-            <td> <!-- New column -->
+            <td> 
               <% if (shortUrl.favorite) { %>
               <form action="/shortUrls/<%= shortUrl._id %>/favorite?_method=PUT" method="POST">
                 <button type="submit" class="btn btn-warning btn-sm rounded-pill">
