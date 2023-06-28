@@ -20,6 +20,12 @@ Necessary Extensions and further required packages are also required to be insta
 - **npm i --save-dev nodemon**
 - This will install nodemon and save it as a development dependency in the project. The package will be downloaded from the npm registry and stored in the **"node_modules"** directory within the project's root folder.
 
+- - **npm i shortid**
+- "shortid" is a popular npm package used to generate unique and concise IDs which plays a vital role in the URL shortening process.
+
+- **npm install method-override**
+- It is a npm package commonly which allows us to override the HTTP request method using special query parameters. It configures with Express.js application as middleware.
+
 - **npm run**
 - (Ensure that MongoDB server is successfully running and connected most probably in the **localhost:27017** PORT, if it is giving errors and is getting disconnected, try manual approach -> Run **mongod** command in the terminal)
 - **npm run test**
@@ -27,12 +33,6 @@ Necessary Extensions and further required packages are also required to be insta
 (Here devStart refers to the script nomenclature done in the package.json file which is **devStart** in my project)
 
 - **Now you can open your poject in the browser with the PORT specified in the server.js file. In this case it is "localhost:5000"**
-
-- **npm i shortid**
-- "shortid" is a popular npm package used to generate unique and concise IDs which plays a vital role in the URL shortening process.
-
-- **npm install method-override**
-- It is a npm package commonly which allows us to override the HTTP request method using special query parameters. It configures with Express.js application as middleware.
 
 - **NOTE**
  - *It is suggested to install MongoDB for VSCode, Quokka.js , NodeJS, ejs language support extensions in your VSCode for the smooth functioning*
