@@ -5,7 +5,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const app = express();
 
-// Connect to MongoDB
+
 mongoose.connect('mongodb://127.0.0.1/urlShortener', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -26,20 +26,19 @@ const users = [
   { username: 'user', password: '123456' }
 ];
 
-// Middleware to check authentication
+// Middleware
 function authenticateUser(req, res, next) {
   if (req.session && req.session.user) {
     // User is authenticated
     next();
   } else {
-    // User is not authenticated
+    
     res.redirect('/login');
   }
 }
 
-// Login route
 app.get('/login', (req, res) => {
-  res.render('login'); // Create a login view using your preferred template engine
+  res.render('login'); 
 });
 
 app.post('/login', (req, res) => {
@@ -56,7 +55,7 @@ app.post('/login', (req, res) => {
 });
 
 
-// Homepage route
+// Homepage
 app.get('/',authenticateUser, async (req, res) => {
   let query = req.query.q;
   let searchCriteria = {};
@@ -74,9 +73,7 @@ app.get('/',authenticateUser, async (req, res) => {
   }
 
   try {
-    // Finding the matching URLs based on search criteria
     const shortUrls = await ShortUrl.find(searchCriteria);
-    // Passing the search results and query to the viewing
     res.render('index', { shortUrls: shortUrls, query: query, user: req.session.user });
   } catch (error) {
     console.error('Error occurred while searching URLs:', error);
@@ -84,14 +81,12 @@ app.get('/',authenticateUser, async (req, res) => {
   }
 });
 
-// Create short URL route
 app.post('/shortUrls',authenticateUser,  async (req, res) => {
   const { fullUrl, notes } = req.body;
   await ShortUrl.create({ full: fullUrl, notes: notes });
   res.redirect('/');
 });
 
-// Redirect to full URL
 app.get('/:shortUrl', authenticateUser, async (req, res) => {
   const shortUrl = await ShortUrl.findOne({ short: req.params.shortUrl });
   if (shortUrl == null) return res.sendStatus(404);
@@ -100,13 +95,11 @@ app.get('/:shortUrl', authenticateUser, async (req, res) => {
   res.redirect(shortUrl.full);
 });
 
-// Delete short URL route
 app.delete('/shortUrls/:id', authenticateUser, async (req, res) => {
   const { id } = req.params;
   await ShortUrl.findByIdAndRemove(id);
   res.redirect('/');
 });
-
 
 
 app.listen(process.env.PORT || 5000, () => {
