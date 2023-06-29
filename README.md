@@ -26,11 +26,14 @@ Necessary Extensions and further required packages are also required to be insta
 - **npm install method-override**
 - -(It is a npm package commonly which allows us to override the HTTP request method using special query parameters. It configures with Express.js application as middleware)
 
+- **npm install express-session**
+- -(It is a Simple session middleware for Express)
+  
 - **npm run**
 - -(Ensure that MongoDB server is successfully running and connected most probably in the **localhost:27017** PORT, if it is giving errors and is getting disconnected, try manual approach -> Run **mongod** command in the terminal)
 - **npm run test**
 - **npm run devStart**
-(Here devStart refers to the script nomenclature done in the package.json file which is **devStart** in my project)
+- (Here devStart refers to the script nomenclature done in the package.json file which is **devStart** in my project, the login credentials are stored in server.js file and can be edited there. For example:- Username : admin, Password : password)
 
 - **Now you can open your poject in the browser with the PORT specified in the server.js file. In this case it is "localhost:5000"**
 
