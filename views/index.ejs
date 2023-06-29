@@ -127,13 +127,20 @@
 
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(47, 140, 206); height: 55px;">
     <div class="container">
-        <h5 class="" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;color: whitesmoke; font-size: 25px;"> urlsolution @IITR </h2>
-      <a class="navbar-brand" href="/" style="text-align: center;"> <URL </a>
+      <a class="navbar-brand" href="#">
+        <img src="https://e7.pngegg.com/pngimages/383/404/png-clipart-computer-icons-hyperlink-polaris-learning-ltd-links-miscellaneous-blue-thumbnail.png" alt="Logo" height="30">
+        <span class="" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;color: whitesmoke; font-size: 25px;">Urlsolution @IITR</span>
+      </a>
+      <ul class="navbar-nav ml-auto">
+      </ul>
     </div>
   </nav>
+  
+
+  
 
   <div class="container">
-    <h1 class="text-center mb-5" style="color: rgb(9, 35, 112);">URL Shrinker</h1>
+    <h1 class="text-center mb-5" style="color: rgb(9, 35, 112); padding-top: 25px;">URL Shrinker</h1>
 
     <form action="/" method="GET" class="form-inline justify-content-center">
       <div class="input-group">
@@ -171,6 +178,7 @@
             <th>Shortened URL</th>
             <th>Clicks</th>
             <th>Notes</th>
+            <th>Favorite</th>
             <th></th>
           </tr>
         </thead>
@@ -181,6 +189,13 @@
             <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
             <td><%= shortUrl.clicks %></td>
             <td><%= shortUrl.notes %></td>
+            <td>
+              <form action="/shortUrls/<%= shortUrl._id %>/favorite" method="POST">
+                <button style="width: 50%; height: 26px;" type="submit" class="btn btn-sm rounded-pill <%= shortUrl.favorite ? 'btn-primary' : 'btn-outline-primary' %>">
+                  <i class="fas fa-star"></i>
+                </button>
+              </form>
+            </td>
             <td>
               <form action="/shortUrls/<%= shortUrl._id %>?_method=DELETE" method="POST">
                 <button type="submit" class="btn btn-danger btn-sm rounded-pill">
