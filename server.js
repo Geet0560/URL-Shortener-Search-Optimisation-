@@ -56,7 +56,7 @@ app.post('/login', (req, res) => {
 
 
 // Homepage
-app.get('/',authenticateUser, async (req, res) => {
+app.get('/', authenticateUser, async (req, res) => {
   let query = req.query.q;
   let searchCriteria = {};
 
@@ -64,22 +64,39 @@ app.get('/',authenticateUser, async (req, res) => {
     const regex = new RegExp(query, 'i');
     searchCriteria = {
       $or: [
-        // searching through all the three
         { full: regex },
         { short: regex },
-        { notes: regex },
-      ],
+        { notes: regex }
+      ]
     };
   }
-
+  
   try {
-    const shortUrls = await ShortUrl.find(searchCriteria);
+    const shortUrls = await ShortUrl.find(searchCriteria).sort({ favorite: -1 });
     res.render('index', { shortUrls: shortUrls, query: query, user: req.session.user });
   } catch (error) {
     console.error('Error occurred while searching URLs:', error);
     res.status(500).send('Internal Server Error');
   }
 });
+
+
+
+app.post('/shortUrls/:id/favorite', authenticateUser, async (req, res) => {
+  const { id } = req.params;
+  const shortUrl = await ShortUrl.findById(id);
+
+  if (!shortUrl) {
+    return res.sendStatus(404);
+  }
+
+  shortUrl.favorite = !shortUrl.favorite;
+  await shortUrl.save();
+
+  res.redirect('/');
+});
+
+
 
 app.post('/shortUrls',authenticateUser,  async (req, res) => {
   const { fullUrl, notes } = req.body;
